@@ -9,8 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
+        ScrollView{
+            LazyVStack(alignment: .leading){
+                ForEach(0..<60){ index in
+                    Rectangle()
+                        .fill(RadialGradient(
+                            gradient: Gradient(colors: [.orange, .blue,.yellow]),
+                            center: UnitPoint(x: 0.2, y: 0),
+                            startRadius: 0,
+                            endRadius: 200)
+                            )
+                        .frame(height: pow(1.1,CGFloat(index)))
+                        .cornerRadius(10)
+                    
+                    
+                    
+                    
+                    
+                }
+              
+            }
             .padding()
+        }
     }
 }
 
